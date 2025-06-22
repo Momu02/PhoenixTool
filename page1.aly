@@ -1,0 +1,560 @@
+{
+  LinearLayout;
+  orientation="vertical";
+  layout_width="fill";
+  layout_height="fill";
+  background="/storage/emulated/0/Phoenix/Wallpaper/1.png";
+  {
+    ScrollView;
+    layout_width="fill";
+    layout_height="fill";
+    id="fun1ScrollView";
+    verticalScrollBarEnabled=false;
+    {
+      LinearLayout;
+      orientation="vertical";
+      layout_width="fill";
+      layout_height="wrap";
+      {--瀑布流
+        CardView;
+        layout_height="150dp";
+        radius="16";
+        CardBackgroundColor="#60000000";
+        layout_width="fill";
+        visibility = View.GONE,
+        CardElevation="2";
+        layout_margin="16";
+        id="card_view";
+        {
+          LinearLayout;
+          layout_width="fill";
+          orientation="vertical";
+          layout_height="fill";
+          {
+            LinearLayout;
+            layout_width="fill";
+            orientation="horizontal";
+            layout_height="wrap";
+            {
+              TextView;
+              textSize="45sp";
+              textColor="#FFFFFF";
+              layout_marginLeft="10dp";
+              id="temperature";
+            };
+            {
+              TextView;
+              textSize="16sp";
+              layout_marginLeft="10dp";
+              id="airquality";
+            };
+          };
+          {
+            TextView;
+            textSize="16sp";
+            textColor="#FFFFFF";
+            layout_marginLeft="10dp";
+            id="dateTime";
+          };
+          {
+            TextView;
+            textSize="18sp";
+            textColor="#ffe9e7ef";
+            layout_marginLeft="10dp";
+            layout_marginTop="10dp";
+            id="zhounow";
+          };
+          {
+            LinearLayout;
+            layout_width="fill";
+            orientation="horizontal";
+            layout_height="fill";
+            {
+              TextView;
+              textSize="16sp";
+              textColor="#FFFFFF";
+              layout_marginLeft="10dp";
+              layout_marginTop="10dp";
+              id="position";
+            };
+            {
+              TextView;
+              textSize="12sp";
+              textColor="#60FFFFFF";
+              layout_marginLeft="10dp";
+              layout_marginTop="10dp";
+              text="(点击可自定义地区)";
+              onClick=function()
+                输入对话框("修改天气地区","可输入金平区/澄海区/广东等",function(input)
+                  this.setSharedData("weatherposition",input)
+                  activity.recreate()--重构activity
+                  提示("刷新中...")
+                end)
+              end;
+            };
+          };
+        };
+        {
+          LinearLayout,
+          layout_width="wrap",--布局宽度
+          orientation="vertical";
+          layout_gravity="center|right";
+          layout_height="fill",--布局高度
+          layout_marginRight="30dp";
+          {
+            ImageView;
+            layout_width="100dp";
+            --src=this.getSharedData("weathericon");
+            layout_gravity="center|right";
+            BackgroundColor="#00FFFFFF";
+
+            id="weathericons";
+
+            layout_height="100dp";
+          };
+          {
+            TextView;
+            textSize="16sp";
+            textColor="#FFFFFF";
+            layout_gravity="center";
+            id="weather";
+          };
+        };
+      };
+      --瀑布流版块
+      {
+        CardView;--卡片控件
+        layout_margin='16';--卡片边距
+        CardElevation='2';--卡片阴影
+        layout_width='fill';--卡片宽度
+        id="作业view";
+        visibility = View.GONE,
+        layout_height='fill';--卡片高度
+        radius='16';--卡片圆角
+        CardBackgroundColor='#9ff3f9f1';--卡片背景颜色
+        {
+          LinearLayout,
+          layout_width="fill",--布局宽度
+          orientation="vertical";
+          layout_height="fill",--布局高度
+          {
+            TextView;
+            textColor="#FFFFFF";--白色字体
+            textSize="12sp";
+            layout_marginTop="10dp";
+            text="注意！英语作业不会显示";
+            layout_marginLeft="10dp";
+          };
+          {
+            MarkdownView;
+            layout_width="fill";
+            backgroundColor="#00EBE9E8";
+            layout_height="wrap";
+            id="homework";
+          };
+        }
+      };
+      --瀑布流版块
+      {
+        CardView;--卡片控件
+        layout_margin='16';--卡片边距
+        CardElevation='2';--卡片阴影
+        layout_width='fill';--卡片宽度
+        layout_height=this.getSharedData("课表高度");--卡片高度
+        radius='16';--卡片圆角
+        id="课表view";
+        visibility = View.GONE,
+        CardBackgroundColor='#60fffff3';--卡片背景颜色
+        {
+          GridView;
+          id="kbgrid";
+          layout_width='85%w';--网格宽度
+          layout_height=this.getSharedData("课表高度");
+          layout_marginLeft="10dp";
+          HorizontalSpacing='10dp';--两列直接的边距
+          VerticalSpacing='15dp';--两行之间的间距
+
+        };
+      };
+      -- 瀑布流版块
+      {
+        CardView;--卡片控件
+        layout_margin='16';--卡片边距
+        CardElevation='2';--卡片阴影
+        layout_width='fill';--卡片宽度
+        layout_height="150dp";--卡片高度
+        radius='16';--卡片圆角
+        id="yktview";
+        onClick=function()
+          url = "http://wechat.stu.edu.cn/wechat/smartcard/Smartcard_cardbalance"
+          activity.newActivity("webliulan",{nil,url})
+        end;
+        visibility = View.GONE,
+        CardBackgroundColor='#604A90E2';--卡片背景颜色（这里使用了与原布局相似的蓝色）
+        {
+          LinearLayout,
+          layout_width="fill",--布局宽度
+          orientation="vertical";
+          layout_height="fill",--布局高度
+          {
+            TextView;
+            textColor="#FFFFFF";--白色字体
+            textSize="20sp";
+            layout_marginTop="10dp";
+            text="一卡通余额";
+            layout_marginLeft="10dp";
+            Typeface=字体("product");
+          };
+
+          {
+            LinearLayout,
+            layout_width="-1",--布局宽度
+            orientation="horizontal";
+            layout_height="wrap",--布局高度
+            {
+              TextView;
+              textColor="#FFFFFF";--白色字体
+              textSize="19sp";
+              text="余额(元)： ";
+              Typeface=字体("product");
+              layout_gravity="center";
+              layout_marginLeft="10dp";
+              layout_weight="1";
+            };
+            {
+              TextView;
+              textColor="#FFFFFF"; --白色字体
+              textSize="36sp";
+              text="";
+              id="yktbalance";
+              layout_gravity="center";
+              layout_marginLeft="10dp";
+              layout_weight="1";
+              singleLine=true; --设置单行显示
+            };
+            {
+              LinearLayout,
+              layout_width="wrap",--布局宽度
+              layout_margin="20dp";
+              gravity="right";
+              layout_weight="2";
+              layout_height="wrap",--布局高度
+              {
+                Button;
+                textColor="#4A90E2";--按钮字体颜色
+                textSize="16sp";
+                text="充值";
+                Typeface=字体("product");
+                onClick=function() 跳转网页("alipays://platformapi/startapp?appId=2013062600000474") end;
+                background="#FFFFFF";--白色背景按钮
+                layout_width='90dp';--按钮宽度
+                layout_height='40dp';--按钮高度
+              };
+            };
+          };
+          {
+            TextView;
+            textColor="#90FFFFFF";--白色字体
+            textSize="12sp";
+            layout_marginTop="10dp";
+            text="卡号请看实体卡背面(6位数)";
+            layout_marginLeft="10dp";
+          };
+        };
+      };
+      --瀑布流版块
+      {
+        CardView;--卡片控件
+        layout_margin='16';--卡片边距
+        CardElevation='2';--卡片阴影
+        layout_width='fill';--卡片宽度
+        layout_height=this.getSharedData("OA高度");--卡片高度
+        radius='16';--卡片圆角
+        CardBackgroundColor='#40f35336';--卡片背景颜色
+        id="OAview";
+        visibility = View.GONE,
+        {
+          RelativeLayout;
+          layout_height="match_parent";
+          layout_width="fill";
+          {
+            LinearLayout;--线性布局
+            Orientation='vertical';--布局方向
+
+            layout_width='fill';--布局宽度
+            Gravity='center';--对齐方式
+            layout_height='fill';--布局高度
+            background='#00000000';--布局背景颜色(或图片路径)
+            {
+              LinearLayout,
+              orientation = "vertical",
+              layout_width = "fill",
+              layout_height = "fill",
+              {
+                LinearLayout,
+                orientation = "horizontal",
+                layout_width = "match_parent",
+                layout_height = "wrap_content",
+                gravity = "bottom",
+                {
+                  Button,
+                  id = "btn_previous",
+                  text = "上一页",
+                  layout_width = "wrap_content",
+                  layout_height = "wrap_content"
+                },
+                {
+                  Button,
+                  id = "btn_next",
+                  text = "下一页",
+                  layout_width = "wrap_content",
+                  layout_height = "wrap_content"
+                },
+                {
+                  TextView,
+                  id = "label_current_pagenum",
+                  text = "",
+                  textSize = "12sp",
+                  textColor = "#FFFFFF",
+                  layout_width = "wrap_content",
+                  layout_height = "wrap_content",
+
+                },
+                {
+                  Button,
+                  id = "btn_can_search",
+                  text = "显示查询",
+                  layout_width = "wrap_content",
+                  layout_height = "wrap_content",
+
+                }
+              },
+              {
+                LinearLayout,
+                id = "div_search",
+                orientation = "vertical",
+                layout_width = "match_parent",
+                layout_height = "wrap_content",
+                visibility = View.GONE,
+                {
+                  TextView,
+                  text = "发布单位",
+                  textSize = "12sp",
+                  textColor = "#FFFFFF",
+                  layout_width = "wrap_content",
+                  layout_height = "wrap_content"
+                },
+                {
+                  Spinner,
+                  id = "select_subcompany",
+                  layout_width = "match_parent",
+                  layout_height = "wrap_content"
+                },
+                {
+                  TextView,
+                  text = "全文检索",
+                  textSize = "12sp",
+                  textColor = "#FFFFFF",
+                  layout_width = "wrap_content",
+                  layout_height = "wrap_content",
+
+                },
+                {
+                  EditText,
+                  id = "textbox_keyword",
+                  layout_width = "match_parent",
+                  layout_height = "wrap_content"
+                },
+                {
+                  Button,
+                  id = "btn_search",
+                  text = "查询",
+                  layout_width = "wrap_content",
+                  layout_height = "wrap_content",
+
+                }
+              },
+              {
+                RelativeLayout;
+                layout_marginTop="30dp";
+                layout_width="match_parent";
+                layout_height="match_parent";
+                {
+                  LinearLayout,
+                  layout_width = "match_parent",
+                  layout_height = "fill",
+                  {
+                    ListView,
+                    id = "doc_ul",
+                    layout_width = "match_parent",
+                    layout_height = "wrap",
+                  };
+                  {
+                    LinearLayout,
+                    layout_width = "match_parent",
+                    layout_height = "wrap",
+                    id="div_accessory";
+                  }
+                };
+
+              }
+            };
+
+          };
+        };
+      };
+      --瀑布流版块
+      {
+        CardView;--卡片控件
+        layout_margin='16';--卡片边距
+        CardElevation='2';--卡片阴影
+        layout_width='fill';--卡片宽度
+        id="一卡通view";
+        visibility = View.GONE,
+        layout_height='fill';--卡片高度
+        radius='16';--卡片圆角
+        CardBackgroundColor='#60fffff3';--卡片背景颜色
+        {
+          MarkdownView;
+          layout_width="fill";
+          backgroundColor="#EBE9E8";
+          layout_height="wrap";
+          id="一卡通vi";
+        };
+
+      };
+      {
+        RelativeLayout;
+        layout_height="match_parent";
+        layout_width="fill";
+        {
+          LinearLayout,
+          layout_width = "match_parent",
+          layout_height = "match_parent",
+          {
+            LinearLayout;
+            layout_width="fill";
+            orientation="vertical";
+            layout_height="-2";
+            {
+              LinearLayout;
+              layout_width="fill";
+              gravity="center|left";
+              orientation="horizontal";
+              padding="10dp";
+              {
+                ImageView;
+                src="image/icon/page1_guanfang.png";
+                --layout_margin="10dp";
+                layout_height="45dp";
+                layout_width="45dp";
+                padding="8dp";
+                ColorFilter="#FFE84033";
+              };
+              {
+                TextView;
+                Typeface=Typeface.DEFAULT_BOLD;
+                textColor="#FFE84033";
+                layout_marginLeft="10dp";
+                textSize="15sp";
+                text="实用功能";
+                Typeface=字体("product");
+              };
+            };
+            {
+              FlowLayout,
+              layout_width="fill",
+              layout_height="fill",
+              -- paddingBottom="30dp";
+              gravity="center",
+              layout_marginBottom="10dp";
+              MinChildSpacing="5dp";
+              --自控力间距
+              ChildSpacing="1dp",
+              --行间距
+              RowSpacing="10dp",
+              id="界面1f1",
+            },
+            {
+              TextView;
+              layout_width="-1";
+              layout_height="2px";
+              background="#FFE0E0E0";
+              layout_marginTop="8dp";
+              layout_marginBottom="8dp";
+            };
+            {
+              LinearLayout;
+              layout_width="fill";
+              orientation="vertical";
+              layout_height="-2";
+              {
+                LinearLayout;
+                layout_width="fill";
+                gravity="center|left";
+                orientation="horizontal";
+                padding="10dp";
+                {
+                  ImageView;
+                  src=图标("toolbox");
+                  --layout_margin="10dp";
+                  layout_height="45dp";
+                  layout_width="45dp";
+                  padding="8dp";
+                  ColorFilter="#FF3B4DBB";
+                };
+                {
+                  TextView;
+                  Typeface=Typeface.DEFAULT_BOLD;
+                  textColor="#FF3B4DBB";
+                  layout_marginLeft="10dp";
+                  textSize="15sp";
+                  text="学校网站";
+                  Typeface=字体("product");
+                };
+              };
+              {
+                FlowLayout,
+                layout_width="fill",
+                layout_height="fill",
+                -- paddingBottom="30dp";
+                layout_marginBottom="10dp";
+                gravity="center",
+                MinChildSpacing="5dp";
+                --自控力间距
+                ChildSpacing="1dp",
+                --行间距
+                RowSpacing="10dp",
+                id="界面1f2",
+              },
+            };
+          };
+        };
+        {
+          LinearLayout,
+          orientation = "vertical",
+          layout_width = "fill",
+          visibility = 8,
+          layout_height = "fill",
+          {
+            LuaWebView,
+            id = "mystuweb",
+            backgroundColor="#00000000";
+
+          },
+          {
+            LuaWebView,
+            id = "yktweb",
+            backgroundColor="#00000000";
+
+          },
+          {
+            LuaWebView,
+            id = "kbweb",
+            backgroundColor="#00000000";
+          },
+        }
+      };
+    }
+  }
+}

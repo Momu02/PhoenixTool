@@ -1,0 +1,23 @@
+{
+  LinearLayout;
+  background="/storage/emulated/0/Phoenix/Wallpaper/1.png";
+  layout_width="fill";
+  layout_height="fill";
+  orientation="vertical";
+  {
+    LinearLayout;
+    orientation="vertical";
+    backgroundColor="#293047";
+    layout_height="fill";
+    layout_width="fill";
+    {
+      LuaWebView;
+      id="myfreemp3music";
+      layout_height="match_parent";
+      layout_width="match_parent";
+    };
+
+  };
+};
+
+

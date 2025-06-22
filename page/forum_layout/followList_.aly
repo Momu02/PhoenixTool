@@ -1,0 +1,44 @@
+{
+  LinearLayout;
+  layout_height="fill";
+  layout_width="fill";
+  
+  {
+    LinearLayout;
+    layout_marginTop="10dp";
+    layout_width="match_parent";
+    gravity="left|center";
+    orientation="horizontal";
+    {
+      CardView;
+      layout_width="40dp";
+      CardElevation="0dp";
+      radius="20dp";
+      layout_height="40dp";
+      layout_marginLeft="10dp";
+      {
+        ImageView;
+        scaleType="centerCrop";
+        layout_width="match_parent";
+        layout_height="match_parent";
+        id="head";
+      };
+    };
+    {
+      LinearLayout;
+      layout_marginLeft="10dp";
+      orientation="vertical";
+      {
+        TextView;
+        text="name";
+        textColor="#000000";
+        id="name";
+      };
+      {
+        TextView;
+        text="user";
+        id="user";
+      };
+    };
+  };
+};

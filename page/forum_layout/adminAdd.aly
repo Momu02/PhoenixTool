@@ -1,0 +1,28 @@
+{
+  LinearLayout;
+  layout_height="fill";
+  orientation="vertical";
+  layout_width="fill";
+  {
+    TextView;
+    layout_margin="10dp";
+    text="用户账号";
+    layout_marginTop="30dp";
+    textColor="#000000";
+  };
+  {
+    EditText;
+    inputType="number";
+    id="addUser";
+    hint="输入账号";
+    layout_width="match_parent";
+  };
+  {
+    Button;
+    layout_marginRight="10dp";
+    text="添加";
+    layout_marginLeft="10dp";
+    layout_width="match_parent";
+    id="addButton";
+  };
+};

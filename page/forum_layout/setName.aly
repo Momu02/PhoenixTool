@@ -1,0 +1,23 @@
+{
+  LinearLayout;
+  layout_height="fill";
+  layout_width="fill";
+  orientation="vertical";
+  {
+    EditText;
+    layout_margin="10dp";
+    layout_marginTop="30dp";
+    layout_width="match_parent";
+    singleLine="true";
+    id="name";
+    hint="输入昵称";
+  };
+  {
+    Button;
+    id="setButton";
+    layout_marginRight="10dp";
+    text="修改";
+    layout_width="match_parent";
+    layout_marginLeft="10dp";
+  };
+};

@@ -1,0 +1,22 @@
+{
+  LinearLayout;
+  layout_width="fill";
+  layout_height="fill";
+  orientation="vertical";
+  {
+    EditText;
+    layout_margin="10dp";
+    hint="输入签名";
+    layout_marginTop="30dp";
+    id="signatrue";
+    layout_width="match_parent";
+    };
+    {
+  Button;
+    layout_width="match_parent";
+    layout_marginRight="10dp";
+    id="setButton";
+    text="修改";
+    layout_marginLeft="10dp";
+    };
+  };

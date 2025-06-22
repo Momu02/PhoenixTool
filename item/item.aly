@@ -1,0 +1,24 @@
+{--这里动的是论坛轮播图
+  FrameLayout;
+  layout_height="fill";
+  layout_width="fill";
+  {
+    CardView;
+    layout_height="fill";
+    layout_width="fill";
+    layout_marginTop="15dp";
+    layout_marginLeft="20dp";
+    layout_marginRight="20dp";
+    layout_marginBottom="5dp";
+    radius="33";
+    elevation="8";
+    CardBackgroundColor="#ffffffff";
+    {
+      ImageView;
+      id="item_img";
+      layout_height="fill";
+      layout_width="fill";
+      scaleType="centerCrop";
+    }
+  }
+}

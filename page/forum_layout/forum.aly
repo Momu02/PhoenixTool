@@ -1,0 +1,154 @@
+{
+  LinearLayout;
+  layout_height="fill";
+  orientation="vertical";
+  layout_width="fill";
+  backgroundColor=backgroundc;
+  {
+    RelativeLayout;
+    layout_marginTop="30dp";
+    background="#FFFFFF"; -- 顶部标题栏背景为白色
+    layout_height="56dp"; -- 固定高度
+    layout_width="match_parent";
+    elevation="4dp"; -- 添加阴影效果
+    {
+      ImageView; -- 返回按钮图标
+      id="exit";
+      src=图标("ic_arrow_back"); -- 使用返回图标
+      ColorFilter = 主题色;
+      layout_marginLeft="16dp";
+      layout_centerVertical="true";
+      layout_width="24dp";
+      layout_height="24dp";
+    };
+    {
+      TextView;
+      id="title";
+      text="板块详情";
+      textSize="18sp";
+      textColor="#000000";
+      layout_centerInParent="true";
+    };
+    {
+      ImageView; -- 刷新按钮图标
+      id="refresh";
+      src=图标("ic_refresh"); -- 使用刷新图标
+      ColorFilter = 主题色;
+      layout_marginRight="56dp";
+      layout_centerVertical="true";
+      layout_alignParentRight="true";
+      layout_width="24dp";
+      layout_height="24dp";
+    };
+    {
+      ImageView; -- 发表按钮图标
+      id="issue";
+      src=图标("ic_edit"); -- 使用编辑图标
+      ColorFilter = 主题色;
+      layout_marginRight="16dp"; -- 与刷新按钮保持距离
+      layout_centerVertical="true";
+      layout_alignParentRight="true";
+      layout_width="24dp";
+      layout_height="24dp";
+    };
+  };
+  {
+    LinearLayout;
+    background="#FFFFFF"; -- 搜索栏背景为白色
+    layout_width="fill";
+    layout_height="56dp"; -- 固定高度
+    gravity="center";
+    paddingLeft="6dp";
+    paddingRight="1dp";
+    {
+      EditText;
+      id="content";
+      layout_width="match_parent";
+      layout_height="36dp";
+      background="#FAFAFA"; -- 搜索框背景为浅灰色
+      hint="输入关键词搜索帖子";
+      hintTextColor="#9E9E9E"; -- 提示文字颜色
+      textSize="12sp";
+      paddingLeft="26dp";
+      paddingRight="16dp";
+      singleLine="true";
+      gravity="center_vertical";
+
+    };
+    {
+      ImageView; -- 搜索按钮图标
+      id="searchButton";
+      src=图标("sousuo"); -- 使用搜索图标
+      ColorFilter = 主题色;
+      layout_marginRight="28dp";
+      layout_width="24dp";
+      layout_height="24dp";
+    };
+  };
+  {
+    Button;
+    id="plateAdmin";
+    text="板块管理员";
+    layout_marginLeft="16dp";
+    layout_marginRight="16dp";
+    layout_marginTop="8dp";
+    layout_width="match_parent";
+    layout_height="48dp";
+    background="#6200EE"; -- 按钮背景颜色
+    textColor="#FFFFFF"; -- 按钮文字颜色
+    textSize="16sp";
+
+    elevation="2dp"; -- 阴影效果
+    visibility=8; -- 默认隐藏
+  };
+  {
+    Button;
+    id="check";
+    text="帖子审核";
+    layout_marginLeft="16dp";
+    layout_marginRight="16dp";
+    layout_marginTop="8dp";
+    layout_width="match_parent";
+    layout_height="48dp";
+    background="#03DAC6"; -- 按钮背景颜色
+    textColor="#000000"; -- 按钮文字颜色
+    textSize="16sp";
+
+    elevation="2dp"; -- 阴影效果
+    visibility=8; -- 默认隐藏
+  };
+  {
+    PullingLayout;
+    id="Pulling";
+    layout_width="fill";
+    layout_height="fill";
+    {
+      ListView;
+      id="list";
+      layout_width="match_parent";
+      layout_height="fill";
+      dividerHeight="1dp"; -- 添加分隔线
+    };
+    {
+      ListView;
+      id="searchList";
+      layout_width="match_parent";
+      layout_height="fill";
+      dividerHeight="1dp"; -- 添加分隔线
+
+    };
+    {
+      LinearLayout;
+      id="space";
+      layout_width="match_parent";
+      layout_height="fill";
+      gravity="center";
+      {
+        TextView;
+        text="暂无帖子";
+        textSize="16sp";
+        textColor="#9E9E9E"; -- 提示文字颜色
+      };
+    };
+  };
+};

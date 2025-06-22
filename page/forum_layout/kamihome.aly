@@ -1,0 +1,37 @@
+{
+  LinearLayout;
+  orientation="vertical";
+  layout_height="fill";
+  layout_width="fill";
+  {
+    EditText;
+    layout_margin="10dp";
+    layout_marginTop="30dp";
+    hint="输入卡密";
+    id="code";
+    layout_width="match_parent";
+  };
+  {
+    Button;
+    text="兑换";
+    layout_marginRight="10dp";
+    layout_marginLeft="10dp";
+    id="useButton";
+    layout_width="match_parent";
+  };
+  {
+    EditText;
+    id="imeiCode";
+    layout_margin="10dp";
+    hint="输入IMEI卡密";
+    layout_width="match_parent";
+  };
+  {
+    Button;
+    text="使用";
+    layout_marginRight="10dp";
+    layout_marginLeft="10dp";
+    id="useImei";
+    layout_width="match_parent";
+  };
+};

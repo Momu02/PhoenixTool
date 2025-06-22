@@ -1,0 +1,28 @@
+--名称
+appname="PhoenixTool"
+--版本号
+appver="3.9"
+--版本
+appcode="1"
+--SDK
+appsdk="25"
+--包名
+packagename="com.momu.stu.tool"
+--调试模式
+debugmode=false
+--应用权限
+user_permission={
+  "ACCESS_NETWORK_STATE",
+  "ACCESS_WIFI_STATE",
+  "CHANGE_NETWORK_STATE",
+  "CHANGE_WIFI_STATE",
+  "INTERNET",
+  "READ_EXTERNAL_STORAGE",
+  "REQUEST_INSTALL_PACKAGES",
+  "VIBRATE",
+  "WRITE_EXTERNAL_STORAGE",
+}
+--跳过编译
+skip_compilation={
+
+}

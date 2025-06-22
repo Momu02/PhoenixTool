@@ -1,0 +1,31 @@
+{
+  LinearLayout;
+  orientation="vertical";
+  layout_width="fill";
+  layout_height="fill";
+  {
+    EditText;
+    layout_width="match_parent";
+    hint="输入转账用户";
+    layout_marginTop="30dp";
+    id="toUser";
+    layout_margin="10dp";
+    inputType="number";
+  };
+  {
+    EditText;
+    layout_width="match_parent";
+    hint="输入转账数量";
+    id="num";
+    layout_margin="10dp";
+    inputType="number";
+  };
+  {
+    Button;
+    layout_width="match_parent";
+    id="setButton";
+    layout_marginRight="10dp";
+    text="转账";
+    layout_marginLeft="10dp";
+  };
+};

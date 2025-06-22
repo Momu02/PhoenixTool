@@ -1,0 +1,32 @@
+{
+  LinearLayout;
+  layout_height="fill";
+  orientation="vertical";
+  layout_width="fill";
+  {
+    Button;
+    layout_marginRight="10dp";
+    id="buyRecord";
+    layout_marginTop="30dp";
+    layout_marginLeft="10dp";
+    layout_width="match_parent";
+    text="购买记录";
+  };
+  {
+    ListView;
+    dividerHeight="0dp";
+    layout_width="match_parent";
+    id="list";
+  };
+  {
+    LinearLayout;
+    layout_height="match_parent";
+    gravity="center";
+    layout_width="match_parent";
+    id="space";
+    {
+      TextView;
+      text="暂无商品";
+    };
+  };
+};

@@ -1,0 +1,95 @@
+{
+  FrameLayout;
+  layout_height="match_parent";
+  layout_width="72%w";
+  layout_gravity="left";
+  id="l";
+  --background="#ffffff";
+  background=viewshaderc,
+  {
+    LinearLayout;
+    layout_height="match_parent";
+    layout_width="match_parent";
+    orientation="vertical";
+
+    {
+      LinearLayout;
+      layout_height="24%h"; -- 高度占父布局的 24%
+      layout_width="match_parent";
+
+      {
+        FrameLayout; -- 使用 FrameLayout 作为容器
+        layout_width="-1";
+        layout_height="-1";
+
+        {
+          ImageView; -- 背景图层
+          src="image/wallpaper/SliderBarPicture.png";
+          layout_width="-1";
+          layout_height="-1"; -- 填满整个屏幕
+          scaleType="fitXY"; -- 调整图片比例以填满
+          alpha=0.8,
+        };
+
+        {
+          LinearLayout; -- 上层组件
+          gravity="bottom|left"; -- 将子视图放置在左下角
+          layout_width="-1";
+          layout_height="-1"; -- 填满整个 FrameLayout
+          orientation="horizontal"; -- 横向排列头像和签名
+          {
+            CircleImageView;
+            layout_height="60dp";
+            src="icon",
+            id="头像id",
+            elevation="4dp", -- 阴影层次
+            layout_marginLeft="-160dp", -- 左边距
+            layout_marginBottom="10dp", -- 下边距
+            layout_marginRight="8dp", -- 头像右边距
+          };
+          {
+            LinearLayout; -- 包裹文本的容器
+            orientation="vertical"; -- 垂直排列文本
+            layout_height="-2"; -- 自适应高度
+            layout_width="-2"; -- 自适应宽度
+            layout_marginLeft="-170dp",
+            layout_marginBottom="21dp";
+            {
+              TextView;
+              layout_height="30dp";
+              layout_width="-2";
+              Text="欢迎！点我登录",
+              id="名字id",
+              textColor="#ffffff";
+              textSize="15sp";
+              paddingLeft="0dp"; -- 左边距
+              layout_marginBottom="2dp"; -- 调整底部间距
+              Typeface=字体("product-Bold");
+              SingleLine=true;
+              gravity="center|left";
+            };
+
+            {
+              TextView;
+              layout_width="-2";
+              textColor="#ffffff";
+              id="签名id",
+              textSize="12sp";
+              paddingLeft="0dp"; -- 左边距
+              SingleLine=true;
+              gravity="center|left";
+            };
+          };
+        };
+      };
+    };
+    {
+      ListView;
+      layout_height="match_parent";
+      layout_width="match_parent";
+      id="drawer_list";
+      layout_marginTop="10dp";
+      dividerHeight="0";
+    };
+  };
+};

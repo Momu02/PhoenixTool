@@ -1,0 +1,31 @@
+{
+  LinearLayout;
+  layout_width="fill";
+  layout_height="fill";
+  gravity="center";
+  orientation="vertical";
+  {
+    Button;
+    onClick="moneyPrize";
+    text="积分抽奖";
+    layout_marginRight="10dp";
+    layout_marginLeft="10dp";
+    layout_width="match_parent";
+  };
+  {
+    Button;
+    onClick="vipPrize";
+    text="会员抽奖";
+    layout_marginRight="10dp";
+    layout_marginLeft="10dp";
+    layout_width="match_parent";
+  };
+  {
+    Button;
+    onClick="customizePrize";
+    text="自定义抽奖";
+    layout_marginRight="10dp";
+    layout_marginLeft="10dp";
+    layout_width="match_parent";
+  };
+};

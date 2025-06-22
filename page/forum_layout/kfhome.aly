@@ -1,0 +1,52 @@
+{
+  LinearLayout;
+  orientation="vertical";
+  gravity="center";
+  background="#FFFFFF";  -- 设置背景颜色为白色
+  layout_width="fill";
+  layout_height="fill";
+  padding="16dp";  -- 添加内边距
+  {
+    TextView;
+    text="客服服务";
+    textSize="20sp";
+    textColor="#000000";  -- 设置标题文字颜色
+    gravity="center";
+    layout_marginBottom="16dp";  -- 添加下边距
+    layout_width="match_parent";
+    layout_height="wrap_content";
+  };
+  {
+    Button;
+    text="在线客服";
+    id="onlineService";
+    background="#6200EE";  -- 设置背景颜色
+    textColor="#FFFFFF";  -- 设置文字颜色
+    layout_marginBottom="8dp";  -- 添加下边距
+    layout_width="match_parent";
+    layout_height="wrap_content";
+    layout_marginLeft="16dp";  -- 调整左边距
+    layout_marginRight="16dp";  -- 调整右边距
+    padding="12dp";  -- 添加内边距
+    gravity="center";
+    textSize="16sp";
+    elevation="4dp";  -- 添加阴影效果
+    cornerRadius="8dp";  -- 添加圆角
+  };
+  {
+    Button;
+    text="离线客服";
+    id="robotService";
+    background="#03DAC6";  -- 设置背景颜色
+    textColor="#000000";  -- 设置文字颜色
+    layout_width="match_parent";
+    layout_height="wrap_content";
+    layout_marginLeft="16dp";  -- 调整左边距
+    layout_marginRight="16dp";  -- 调整右边距
+    padding="12dp";  -- 添加内边距
+    gravity="center";
+    textSize="16sp";
+    elevation="4dp";  -- 添加阴影效果
+    cornerRadius="8dp";  -- 添加圆角
+  };
+};

@@ -1,0 +1,56 @@
+{
+  LinearLayout;
+  background="/storage/emulated/0/Phoenix/Wallpaper/1.png";
+  layout_width="fill";
+  layout_height="fill";
+  orientation="vertical";
+  {
+    CardView;
+    background="#00000000";
+    layout_width="match_parent";
+    layout_height="45dp";
+    id="vpnhint";
+    layout_marginRight="-20dp";
+    {
+      TextView;
+      layout_marginTop="10dp";
+      textSize="16sp";
+      text="无需连接校园网即可访问";
+      Typeface=字体("product");
+      textColor="#ffffff";
+    };
+    {
+      Button;
+      text="教程";
+      Typeface=字体("product");
+      onClick = function()
+        AlertDialog.Builder(this)
+        .setTitle("汕大VPN使用教程")
+        .setMessage(
+        "该VPN用来在没有校园网的情况下访问校内网站。使用校园网账号密码登录即可，注意每次登录时需要在“数盾otp”微信小程序获取动态口令进行验证。\n\nBy 言和"
+        )
+        .setPositiveButton("知道了", function() end)
+        .show()
+      end;
+      layout_marginRight="25dp";
+      layout_gravity="right";
+    };
+  };
+
+  {
+    LinearLayout;
+    orientation="vertical";
+    backgroundColor="#293047";
+    layout_height="fill";
+    layout_width="fill";
+    {
+      LuaWebView;
+      id="vpn";
+      layout_height="match_parent";
+      layout_width="match_parent";
+    };
+
+  };
+};
+
+
