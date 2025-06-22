@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/8c42968b-c0e9-4c0a-8492-9bc8ec292bf9)# PhoenixTool（原名STUTool）
+# PhoenixTool（原名STUTool）
 个人开发的汕头大学校园工具
 
 本项目是基于Lua语言的轻型脚本编程工具(Androlua)编写的安卓软件。
